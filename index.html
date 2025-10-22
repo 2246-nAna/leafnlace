@@ -16,9 +16,9 @@
       height: 100vh;
       width: 100vw;
       background: url('1000094039.jpg') no-repeat center top;
-      background-size: 120%;
+      background-size: contain; /* ✅ shows full image without cropping */
+      background-color: #000; /* elegant frame for uncovered areas */
       background-attachment: fixed;
-      background-color: #000;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -28,6 +28,7 @@
       color: white;
       position: relative;
       overflow: hidden;
+      padding: 20px;
     }
 
     body::after {
@@ -70,6 +71,7 @@
       font-size: 1.1rem;
       font-weight: 400;
       color: #f8dede;
+      margin-top: 1rem;
       margin-bottom: 2rem;
       position: relative;
       z-index: 1;
@@ -84,7 +86,7 @@
       position: relative;
       z-index: 1;
       flex-wrap: wrap;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
 
     .socials a img {
@@ -137,6 +139,11 @@
     }
 
     @media (max-width: 480px) {
+      body {
+        background-size: cover; /* adjust to cover smaller screens */
+        background-position: center;
+      }
+
       h1 {
         font-size: 2rem;
       }
@@ -160,7 +167,6 @@
   <h1>COMING SOON</h1>
   <h2>Floral artistry for life's finest moments</h2>
 
-
   <div class="socials">
     <a href="https://instagram.com/leafandlace.co" target="_blank">
       <img src="2142569_circle_colored_gradient_instagram_media_icon.png" alt="Instagram">
@@ -178,10 +184,12 @@
       <img src="1954539_call_contact_mobile_phone_telephone_icon.png" alt="Phone">
     </a>
   </div>
-    <h3>Excited to announce we are launching on <b>01 Nov 2025</b></h3>
+
+  <h3>Excited to announce we are launching on <b>01 Nov 2025</b></h3>
 
   <footer>
     © 2025 Leaf & Lace. All rights reserved. | Designed with ❤️ by Nqobile Mvelase
   </footer>
 </body>
 </html>
+
